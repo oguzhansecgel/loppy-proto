@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+package com.lopply.subscriber;
+
+service SubscriberService {
+
+  rpc GetSubscriberIdByUId (SubscriberUIdRequest) returns (Subscriber);
+}
+
+message SubscriberUIdRequest {
+  string uid = 1;
+}
+
+message Subscriber {
+  int64 id = 1;
+}
